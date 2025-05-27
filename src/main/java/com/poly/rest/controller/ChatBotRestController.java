@@ -125,7 +125,7 @@ public class ChatBotRestController {
         contents.add(
                 Map.of("role", "user", "parts", List.of(Map.of("text", prompt.toString() + "Câu hỏi: " + question))));
 
-        Map<String, Object> request = Map.of("contents", contents); // Pass the entire contents list
+        Map<String, Object> request = Map.of("contents", contents);
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request, headers);
 
         try {
