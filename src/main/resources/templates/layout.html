@@ -38,7 +38,18 @@
 			<button id="scroll-down-btn" onclick="scrollToBottom()" style="display: none;">
 				<i class="fas fa-arrow-down"></i>
 			</button>
-
+			<div id="chatbot-suggestions" class="mb-2 px-2 d-flex overflow-auto flex-nowrap gap-2">
+				<button class="btn btn-sm btn-outline-primary" onclick="selectSuggestion(this)">Sản phẩm nào đang khuyến
+					mãi?</button>
+				<button class="btn btn-sm btn-outline-primary" onclick="selectSuggestion(this)">Tôi có bao nhiêu món
+					trong giỏ?</button>
+				<button class="btn btn-sm btn-outline-primary" onclick="selectSuggestion(this)">Đơn hàng gần nhất của
+					tôi là gì?</button>
+				<button class="btn btn-sm btn-outline-primary" onclick="selectSuggestion(this)">Có điện thoại Samsung
+					không?</button>
+				<button class="btn btn-sm btn-outline-primary" onclick="selectSuggestion(this)">Chính sách đổi trả như
+					thế nào?</button>
+			</div>
 			<div id="chatbot-input-area">
 				<input id="chatbot-input" type="text" placeholder="Hỏi gì đi..." />
 				<button onclick="sendChat()">Gửi</button>
@@ -251,7 +262,11 @@
 				icon.classList.add('fa-comment-dots');
 			}
 		}
-
+		function selectSuggestion(button) {
+			const input = document.getElementById('chatbot-input');
+			input.value = button.textContent;
+			sendChat();
+		}
 
 	</script>
 
